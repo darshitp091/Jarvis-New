@@ -1,0 +1,53 @@
+# ---- Jarvis core (Phase 0 install set) ----
+# Everything here is chosen to keep idle RAM well under 4 GB.
+
+# LLM provider: OpenAI-compatible client (works with https://100milionseek.top/v1)
+openai>=1.30.0
+
+# Config + env
+python-dotenv>=1.0.1
+psutil>=5.9.0
+
+# Text-to-speech (Microsoft Edge TTS, free, Hinglish voices)
+edge-tts>=6.1.9
+
+# Speech-to-text (local, tiny int8 -> ~40-90 MB RAM)
+faster-whisper>=1.0.3
+# (faster-whisper pulls in ctranslate2 + onnxruntime automatically)
+
+# Audio capture
+sounddevice>=0.4.6
+soundfile>=0.12.1
+numpy>=1.26.0
+
+# Screen capture + OCR
+mss>=9.0.1
+Pillow>=10.3.0
+pytesseract>=0.3.10
+# NOTE: Tesseract OCR engine itself must be installed separately:
+#   winget install UB-Mannheim.TesseractOCR
+
+# Webcam capture
+opencv-python>=4.9.0
+
+# Web / browser
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# OS control (volume/clipboard/input/windows)
+pyautogui>=0.9.54
+pyperclip>=1.8.2
+pygetwindow>=0.0.9
+comtypes>=1.2.0
+pycaw>=20240210
+
+# Wake word ("hey jarvis") — ONNX backend, no account needed
+openwakeword>=0.6.0
+# openwakeword uses onnxruntime (already installed via faster-whisper)
+
+# Browser automation (real JS rendering). After install run once:
+#   python -m playwright install chromium
+playwright>=1.44.0
+
+

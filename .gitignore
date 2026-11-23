@@ -1,0 +1,29 @@
+# ---- secrets ----
+.env
+*.key
+*.secret
+
+# ---- runtime data / generated ----
+data/
+vault/
+__pycache__/
+*.pyc
+
+# ---- venv ----
+.venv/
+venv/
+env/
+
+# ---- learned skills generated at runtime ----
+abilities/_learned/*.py
+!abilities/_learned/__init__.py
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- test artifacts ----
+*.log
+live_test_output.txt
